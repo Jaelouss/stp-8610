@@ -1,0 +1,50 @@
+.achievements {
+  @include flex-center(column);
+  gap: 40px;
+
+  @include laptop {
+    gap: 10px;
+  }
+  &-wrapper {
+    @include flex-center(column);
+    gap: 24px;
+  }
+  .scores {
+    &__list {
+      width: 100%;
+      @include flex-center(column);
+      gap: 40px;
+
+      @include laptop {
+        flex-direction: row;
+        gap: 120px;
+      }
+    }
+    &__item {
+      width: 100%;
+      padding-block: 20px;
+      border-radius: 8px;
+      background-color: $_background;
+      @include laptop {
+        background-color: transparent;
+      }
+    }
+    &__wrapper {
+      @include flex-center(column);
+      gap: 20px;
+      @include laptop {
+        gap: 40px;
+      }
+    }
+    &__place {
+      color: #39d2d9;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: normal;
+    }
+    &__winner {
+      @include flex-center(column);
+      gap: 12px;
+    }
+  }
+}
