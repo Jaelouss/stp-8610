@@ -8,6 +8,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   line-height: normal;
+  background-color: $_white;
 }
 main {
   flex-grow: 1;
@@ -46,6 +47,7 @@ main {
   align-items: center;
   border-radius: 4px;
   background: $_pink;
+  color: $_white;
 }
 
 h1,

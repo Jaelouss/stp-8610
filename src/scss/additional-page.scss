@@ -1,0 +1,94 @@
+@import './additional-page/header';
+@import './additional-page/headerFall';
+@import './additional-page/footer';
+@import './common/globals';
+
+.additional {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-block: 20px;
+
+    @include laptop {
+      padding-block: 40px;
+    }
+
+    &__wrapper {
+      background-color: $_background;
+      padding-block: 40px;
+      padding-inline: 20px;
+      @include laptop {
+        padding-inline: 160px;
+      }
+    }
+    &__text {
+      text-align: left;
+    }
+  }
+  .basic {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 40px;
+    padding-block: 40px;
+
+    &__key {
+      margin-inline: auto;
+      font-size: 12px;
+      @include laptop {
+        font-size: 16px;
+      }
+    }
+    &__text {
+      text-align: start;
+      display: inline;
+    }
+    &__wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 32px;
+      padding-block: 40px;
+      padding-inline: 20px;
+      background-color: $_background;
+      @include laptop {
+        padding-inline: 160px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      list-style: disc;
+      margin-left: 20px;
+      @include laptop {
+        margin-left: 24px;
+      }
+    }
+    .no-bg {
+      background-color: transparent;
+    }
+    .no-padding {
+      padding: 0;
+    }
+    .no-style {
+      list-style: none;
+    }
+    .add-gap {
+      gap: 20px;
+      @include laptop {
+        gap: 24px;
+      }
+    }
+    .inline-link {
+      display: inline;
+      word-break: break-all;
+    }
+  }
+}

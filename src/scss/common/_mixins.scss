@@ -35,6 +35,19 @@
   }
 }
 
+@mixin visually-hidden($important: false) {
+  position: absolute #{if($important, '!important', '')};
+  width: 1px #{if($important, '!important', '')};
+  height: 1px #{if($important, '!important', '')};
+  margin: -1px #{if($important, '!important', '')};
+  border: 0 #{if($important, '!important', '')};
+  padding: 0 #{if($important, '!important', '')};
+  white-space: nowrap #{if($important, '!important', '')};
+  clip-path: inset(100%) #{if($important, '!important', '')};
+  clip: rect(0 0 0 0) #{if($important, '!important', '')};
+  overflow: hidden #{if($important, '!important', '')};
+}
+
 .container {
   max-width: $mobile;
   margin-inline: auto;
