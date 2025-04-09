@@ -1,0 +1,16 @@
+.world {
+  @include flex-center(column);
+  gap: 24px;
+
+  &-key {
+    background-color: $_blue;
+    color: $_black;
+  }
+  &-title {
+    @include visually-hidden;
+  }
+  &-text {
+    color: $_white;
+    text-align: center;
+  }
+}
