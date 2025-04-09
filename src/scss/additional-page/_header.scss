@@ -23,7 +23,6 @@
       @include flex-center;
       gap: 4px;
       color: $_white;
-      text-decoration: none;
       @include hover {
         text-decoration: underline;
       }
