@@ -1,6 +1,5 @@
 .events {
-}
-.events {
+  padding-block: 80px;
   @include flex-center(column);
   gap: 24px;
   background-color: $_background;
