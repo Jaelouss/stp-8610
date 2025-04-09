@@ -1,0 +1,38 @@
+.additional {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $_pink;
+    @include laptop {
+      padding-inline: 200px;
+      justify-content: start;
+    }
+
+    .logo {
+      width: 45px;
+      height: 36px;
+      @include laptop {
+        width: 65px;
+        height: 52px;
+      }
+    }
+    .arrow-left {
+      stroke: $_white;
+    }
+    .link {
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      gap: 4px;
+      color: $_white;
+      text-decoration: none;
+      @include hover {
+        text-decoration: underline;
+      }
+      @include laptop {
+        margin-right: 235px;
+      }
+    }
+  }
+}
