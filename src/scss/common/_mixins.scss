@@ -1,41 +1,46 @@
-@use 'sass:math';
 @import './breakpoints';
-/*
-screen types: 
-    mobile,
-    to-tablet
-    tablet,
-    to-desktop
-    desktop,
-*/
-@mixin media($_screen) {
-  @if $_screen == mobile {
-    @media screen and (min-width: $mobile) {
+
+@mixin laptop {
+  @media (width > $laptop) {
+    @content;
+  }
+}
+@mixin laptop-below {
+  @media (width <= $laptop) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (width > $mobile) {
+    @content;
+  }
+}
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+@mixin hover($hasActiveEffectOnMobile: true) {
+  @media (any-hover: hover) {
+    &:hover {
       @content;
     }
-  } @else if $_screen == to-tablet {
-    @media screen and (max-width: $to-tablet) {
-      @content;
-    }
-  } @else if $_screen == tablet {
-    @media screen and (min-width: $tablet) {
-      @content;
-    }
-  } @else if $_screen == to-desktop {
-    @media screen and (max-width: $to-desktop) {
-      @content;
-    }
-  } @else if $_screen == desktop {
-    @media screen and (min-width: $desktop) {
-      @content;
+  }
+
+  @if ($hasActiveEffectOnMobile) {
+    @media (any-hover: none) {
+      &:active {
+        @content;
+      }
     }
   }
 }
 
-@mixin font($_fsz, $_lnh) {
-  font-size: #{$_fsz}px;
-
-  $result: math.div($_lnh, $_fsz);
-
-  line-height: math.div(math.round($result * 100), 100);
+.container {
+  max-width: $mobile;
+  margin-inline: auto;
+  padding-inline: $mobile-padding;
+  @include laptop {
+    max-width: $laptop;
+    padding-inline: $laptop-padding;
+  }
 }

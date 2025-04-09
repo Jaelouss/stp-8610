@@ -1,0 +1,88 @@
+@import './mixins';
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: normal;
+}
+main {
+  flex-grow: 1;
+}
+.button-white {
+  border: none;
+  background-color: transparent;
+  transition-duration: 0.7s;
+  padding: 4px 12px;
+  border-radius: 4px;
+  color: $_white;
+  font-size: 16px;
+  font-weight: 500;
+
+  @include hover {
+    background-color: $_pink;
+  }
+}
+.button-black {
+  border: none;
+  background-color: transparent;
+  color: $_black;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.96px;
+  text-transform: uppercase;
+  transition-duration: 0.7s;
+  @include hover {
+    color: $_white;
+  }
+}
+.key {
+  display: flex;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: $_pink;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: $_black;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.96px;
+  text-transform: uppercase;
+
+  @include laptop {
+    font-size: 36px;
+    text-align: start;
+    letter-spacing: 1.44px;
+  }
+}
+p {
+  color: $_gray;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.64px;
+
+  @include laptop {
+    text-align: start;
+  }
+}
