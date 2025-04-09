@@ -1,0 +1,157 @@
+.achievements {
+  @include flex-center(column);
+  gap: 40px;
+
+  @include laptop {
+    gap: 10px;
+  }
+  &-wrapper {
+    @include flex-center(column);
+    gap: 24px;
+  }
+  .scores {
+    &__list {
+      width: 100%;
+      gap: 40px;
+      display: grid;
+      grid-template-columns: 1fr;
+
+      @include laptop {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 'second first third';
+        align-items: center;
+        gap: 120px;
+      }
+    }
+    &__item {
+      width: 100%;
+      border-radius: 8px;
+      background-color: $_background;
+      @include laptop {
+        background-color: transparent;
+        &.first {
+          grid-area: first;
+        }
+        &.second {
+          grid-area: second;
+        }
+        &.third {
+          grid-area: third;
+        }
+      }
+    }
+    &__wrapper {
+      padding-block: 20px;
+      @include flex-center(column);
+      gap: 20px;
+      @include laptop {
+        gap: 40px;
+      }
+      position: relative;
+    }
+    &__place {
+      color: #39d2d9;
+      font-weight: 700;
+      line-height: normal;
+      &.first {
+        font-size: 36px;
+      }
+      &.second {
+        font-size: 32px;
+      }
+      &.third {
+        font-size: 24px;
+      }
+      @include laptop {
+        font-weight: 900;
+        letter-spacing: 1.92px;
+        &.first {
+          font-size: 64px;
+        }
+        &.second,
+        &.third {
+          font-size: 48px;
+        }
+      }
+    }
+    &__img {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0%;
+        left: 43%;
+        width: 64px;
+        height: 50px;
+        transform: translate(-50%, -50%) rotate(-19.23deg);
+        background-image: image-set(
+          url('/img/achievements/crown.png') 1x,
+          url('/img/achievements/crown-2x.png') 2x
+        );
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        z-index: 10;
+        @include laptop {
+          width: 82px;
+          height: 64px;
+
+          left: 41%;
+        }
+      }
+    }
+    &__photo {
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      &.first {
+        width: 160px;
+        height: 160px;
+      }
+      &.second {
+        width: 120px;
+        height: 120px;
+      }
+      &.third {
+        width: 100px;
+        height: 100px;
+      }
+      @include laptop {
+        &.second,
+        &.third {
+          width: 132px;
+          height: 132px;
+        }
+      }
+    }
+    &__name {
+      color: $_pink;
+      letter-spacing: 1.44px;
+      text-transform: uppercase;
+      &.first {
+        font-size: 36px;
+      }
+      &.second {
+        font-size: 32px;
+      }
+      &.third {
+        font-size: 24px;
+      }
+      @include laptop {
+        &.first {
+          font-size: 36 px;
+        }
+        &.second,
+        &.third {
+          font-size: 24px;
+        }
+      }
+    }
+    &__value {
+      color: $_black;
+      letter-spacing: 0.64px;
+    }
+    &__winner {
+      @include flex-center(column);
+      gap: 12px;
+    }
+  }
+}
