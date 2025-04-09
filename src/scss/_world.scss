@@ -1,0 +1,18 @@
+.world {
+  padding-top: 60px;
+  @include flex-center(column);
+  gap: 24px;
+  background: linear-gradient(to bottom, #ffffff 0%, #e056f5 70%);
+
+  &-key {
+    background-color: $_blue;
+    color: $_black;
+  }
+  &-title {
+    @include visually-hidden;
+  }
+  &-text {
+    color: $_white;
+    text-align: center;
+  }
+}

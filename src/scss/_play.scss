@@ -5,10 +5,7 @@
     @include flex-center(column);
     padding-block: 40px;
     gap: 24px;
-    &-key {
-    }
-    &-title {
-    }
+
     &-text {
       text-align: center;
     }
@@ -39,7 +36,6 @@
       }
       &-body {
         width: 100%;
-        padding: 24px;
         gap: 12px;
         border-radius: 0px 0px 24px 0px;
         background-color: $_background;
@@ -53,15 +49,18 @@
       }
     }
     .summary {
+      padding: 24px;
+
       list-style: none;
       text-align: start;
       text-transform: uppercase;
       color: $_black;
 
       &-text {
-        margin-top: 12px;
         text-align: start;
         color: $_white;
+        padding-block: 12px;
+        padding-inline: 24px;
       }
     }
 
