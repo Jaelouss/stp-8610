@@ -5,10 +5,7 @@
 
 .additional {
   .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-center(column);
     gap: 40px;
     padding-block: 20px;
 
@@ -29,10 +26,8 @@
     }
   }
   .basic {
-    display: flex;
-    flex-direction: column;
+    @include flex-center(column);
     align-items: start;
-    justify-content: center;
     gap: 40px;
     padding-block: 40px;
 
@@ -49,9 +44,7 @@
     }
     &__wrapper {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include flex-center(column);
       align-items: start;
       gap: 32px;
       padding-block: 40px;

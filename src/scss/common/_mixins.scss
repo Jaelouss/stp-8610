@@ -48,6 +48,17 @@
   overflow: hidden #{if($important, '!important', '')};
 }
 
+@mixin flex-center($direction: row, $isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   max-width: $mobile;
   margin-inline: auto;
