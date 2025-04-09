@@ -1,0 +1,36 @@
+.developers {
+  background-image: image-set(
+    url('/img/developers/bgImage.png') 1x,
+    url('/img/developers/bgImage-2x.png') 2x
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &-list {
+    @include flex-center;
+    gap: 120px;
+  }
+  &-item {
+    @include flex-center(column);
+    gap: 24px;
+    &:first-of-type {
+      @include laptop-below {
+        display: none;
+      }
+    }
+    @include laptop {
+      align-items: start;
+    }
+  }
+  &-image {
+    min-width: 164px;
+    min-height: 240px;
+  }
+  &__wrapper {
+    padding: 12px;
+    background-color: rgba(244, 244, 244, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+  }
+}
