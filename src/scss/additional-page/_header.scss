@@ -1,8 +1,7 @@
 .additional {
   .header {
-    display: flex;
+    @include flex-center;
     justify-content: space-between;
-    align-items: center;
     background-color: $_pink;
     @include laptop {
       padding-inline: 200px;
@@ -21,9 +20,7 @@
       stroke: $_white;
     }
     .link {
-      display: flex;
-      justify-self: center;
-      align-items: center;
+      @include flex-center;
       gap: 4px;
       color: $_white;
       text-decoration: none;
