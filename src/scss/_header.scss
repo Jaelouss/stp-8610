@@ -67,13 +67,21 @@
             .list-navigation{
                 display: flex;
                 flex-direction: row;
-                gap: 20px;
+                gap: 12px;
 
                 @include font-settings(16px, 500, 16px, 0);
 
                 .link-navigation{
                     color: #ffffff;
-                }            
+                    padding: 12px 4px 12px 4px;
+                }       
+                
+                .link-navigation:hover,
+                .link-navigation:focus{
+                    background-color: #E056F5;
+                    padding: 12px 4px 12px 4px;
+                    border-radius: 4px;
+                }
             }
         }
     }
