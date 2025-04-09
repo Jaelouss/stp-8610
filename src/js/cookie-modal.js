@@ -1,6 +1,6 @@
 const box = document.querySelector('#cookie-buttons');
 const modal = document.querySelector('#cookie-modal');
-const openModal = localStorage.getItem('cookie') || null;
+const openModal = localStorage.getItem('cookie') === 'true';
 
 if (!openModal) {
   document.documentElement.classList.add('is-lock');
