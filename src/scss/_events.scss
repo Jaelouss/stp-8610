@@ -1,0 +1,7 @@
+.events {
+}
+.events {
+  @include flex-center(column);
+  gap: 24px;
+  background-color: $_background;
+}

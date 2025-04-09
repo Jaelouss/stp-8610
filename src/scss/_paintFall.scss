@@ -1,0 +1,20 @@
+.paintFall {
+  position: relative;
+  top: -1px;
+  width: 100%;
+  height: 52px;
+  background-image: image-set(
+    url('/img/paintFall/paintFall.png') 1x,
+    url('/img/paintFall/paintFall-2x.png') 2x
+  );
+  background-size: contain;
+  background-repeat: no-repeat;
+  @include laptop {
+    background-size: cover;
+    height: 195px;
+  }
+
+  .title {
+    @include visually-hidden(true);
+  }
+}
