@@ -144,10 +144,9 @@
             }
         
             &:hover .line-1, &:hover .line-2 {
-                background-color: #E056F5; /* Колір при ховері */
+                background-color: #E056F5;
             }
         
-            /* Приховуємо на великих екранах */
             @include laptop {
                 display: none;
             }
@@ -155,7 +154,7 @@
         
 
         @include laptop {
-            display: none; /* Приховуємо бургер-меню на великих екранах */
+            display: none;
         }
     }
 

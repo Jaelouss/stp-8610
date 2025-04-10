@@ -1,0 +1,44 @@
+.overview {
+  max-width: 321px;
+  margin: 0 auto;
+
+  @include laptop {
+    max-width: 921px;
+    background-image: image-set(
+      url('/img/overview/boy-1x.png') 1x,
+      url('/img/overview/box-2x.png') 2x
+    );
+
+    background-size: 275px 408px;
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    .box-header {
+      padding-left: 400px;
+    }
+  }
+
+  .box-header {
+    @include flex-center(column);
+    gap: 24px;
+
+    @include laptop {
+      align-items: flex-start;
+      padding-top: 37px;
+      padding-bottom: 37px;
+    }
+
+    .text-under-header {
+      display: inline-block;
+      text-transform: uppercase;
+      background-color: #e056f5;
+      padding: 4px 8px 4px 8px;
+      color: #ffffff;
+      border-radius: 4px;
+    }
+
+    .link-google {
+      margin-top: 16px;
+    }
+  }
+}
