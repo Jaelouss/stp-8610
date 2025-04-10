@@ -37,7 +37,7 @@
   }
 
   .main-header {
-    @include font-settings(40px, 800, 1.2, 0);
+    @include font-settings(40px, 800, 1.1, 0);
     text-transform: none;
     margin-bottom: 24px;
     color: inherit;
