@@ -1,7 +1,4 @@
-.header{
-    background-color: rgba(0, 146, 154, 0.2);
-    backdrop-filter: blur(6px);
-
+.header {
     height: 60px;
     position: fixed;
     top: 0;
@@ -13,8 +10,12 @@
         height: 91px;
     }
 
-    .content{
-        max-width: 280px;
+    .content {
+        background-color: rgba(0, 146, 154, 0.2);
+        backdrop-filter: blur(6px);
+        max-width: 320px;
+        padding-left: 20px;
+        padding-right: 20px;
         margin: 0 auto;
         display: flex;
         flex-direction: row;
@@ -23,12 +24,14 @@
         height: 100%;
 
         @include laptop {
-            max-width: 921px;
+            max-width: 1200px;
+            padding-left: 139.5px;
+            padding-right: 139.5px;
         }
     }
 
-    .icon-box{
-        .favicon{
+    .icon-box {
+        .favicon {
             width: 45px;
             height: 36px;
 
@@ -39,7 +42,7 @@
         }
     }
 
-    .burger-icon{
+    .burger-icon {
         width: 18px;
         height: 13px;
         display: flex;
@@ -47,7 +50,7 @@
         justify-content: space-between;
         cursor: pointer;
 
-        span{
+        span {
             display: block;
             height: 2px;
             background-color: #ffffff;
@@ -59,31 +62,138 @@
         }
     }
 
-    .navigation{
+    .box-navigation {
         display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        z-index: 2000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url(/img/burger-menu/back-1x.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: 330px;
+
+        @media screen and (min-device-pixel-ratio: 2), 
+        (min-resolution: 192dpi) {
+            background-image: url(/img/burger-menu/back-2x.png); 
+        }
+
+        .list-navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            @include font-settings(16px, 500, 16px, 0);
+            color: #888888;
+
+            .element-navigation {
+                text-align: center;
+            }
+
+            .link-navigation {
+                color: #888888;
+                padding: 12px 4px;
+            }
+
+            .link-navigation:hover,
+            .link-navigation:focus {
+                background-color: #E056F5;
+                color: #ffffff;
+                outline: none;
+                padding: 12px 4px;
+                border-radius: 4px;
+            }
+        }
+
+        &.active {
+            display: flex;
+        }
+
+        .icon-cross {
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            
+            .line {
+                width: 20px;
+                height: 2px;
+                border-radius: 2px;
+                background-color: rgb(255, 255, 255);
+                position: absolute;
+                transition: all 0.3s ease;
+            }
+        
+            .line-1 {
+                transform: rotate(45deg);
+            }
+        
+            .line-2 {
+                transform: rotate(-45deg);
+            }
+        
+            &:hover .line-1, &:hover .line-2 {
+                background-color: #E056F5; /* Колір при ховері */
+            }
+        
+            /* Приховуємо на великих екранах */
+            @include laptop {
+                display: none;
+            }
+        }
+        
 
         @include laptop {
-            display: block;
+            display: none; /* Приховуємо бургер-меню на великих екранах */
+        }
+    }
 
-            .list-navigation{
-                display: flex;
-                flex-direction: row;
+    @include laptop {
+        .box-navigation {
+            display: flex; 
+            position: static;
+            width: auto;
+            height: auto;
+            background-color: transparent;
+            background-image: none; 
+            flex-direction: row; 
+            justify-content: flex-start;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            .list-navigation {
+                flex-direction: row; 
                 gap: 12px;
+                color: #ffffff;
 
-                @include font-settings(16px, 500, 16px, 0);
-
-                .link-navigation{
+                .link-navigation {
+                    padding: 12px 4px;
                     color: #ffffff;
-                    padding: 12px 4px 12px 4px;
-                }       
-                
+                }
+    
                 .link-navigation:hover,
-                .link-navigation:focus{
+                .link-navigation:focus {
                     background-color: #E056F5;
-                    padding: 12px 4px 12px 4px;
+                    padding: 12px 4px;
                     border-radius: 4px;
                 }
             }
+           
+        }
+
+        .burger-icon {
+            display: none;
         }
     }
 }
