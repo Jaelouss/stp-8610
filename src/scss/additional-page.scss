@@ -42,6 +42,7 @@
     &__text {
       text-align: start;
       display: inline;
+      color: $_black;
     }
     &__wrapper {
       width: 100%;
@@ -83,6 +84,11 @@
     .inline-link {
       display: inline;
       word-break: break-all;
+      color: $_gray;
+      font-weight: 600;
+      @include hover {
+        text-decoration: underline;
+      }
     }
   }
 }
