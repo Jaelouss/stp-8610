@@ -1,6 +1,6 @@
 .header {
-  background-color: rgba(0, 146, 154, 0.2);
-  backdrop-filter: blur(6px);
+  background-color: #009fa8b5;
+  backdrop-filter: blur(15px);
   max-width: 318.97px;
   height: 60px;
   position: fixed;
@@ -66,7 +66,7 @@
         flex-direction: row;
         gap: 12px;
 
-        @include font-settings(16px, 500, 16px, 0);
+        @include font-settings(18px, 500, 16px, 0);
 
         .link-navigation {
           color: #ffffff;
