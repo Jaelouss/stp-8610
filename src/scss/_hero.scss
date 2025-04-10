@@ -1,0 +1,91 @@
+.hero {
+    height: 458px;
+    background: linear-gradient(to bottom, #00939A, #9DA1F0, #E056F5);
+    padding-block: 0;
+  
+    @include laptop {
+      height: 691px;
+    }
+  
+    .container {
+      max-width: 280px;
+      margin: 0 auto;
+      padding: 0;
+      height: 100%;
+  
+      background-image: url('/img/hero/girl-1.png');
+      background-size: 150px 200px;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+  
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url('/img/hero/girl-2.png');
+      }
+  
+      @include laptop{
+        max-width: 880px;
+        background-size: 448px 600px;
+      }
+    }
+  
+    .content {
+      padding-top: 100px;
+      width: 260px;
+      color: #fff;
+      text-align: start;
+  
+      @include laptop {
+        padding-top: 155.5px;
+        width: 354px;
+      }
+    }
+  
+    .main-header {
+      @include font-settings(40px, 800, 1.1, 0);
+      text-transform: none;
+      margin-bottom: 24px;
+      color: inherit;
+      text-align: start;
+  
+      @include laptop{
+        font-size: 96px;
+      }
+    }
+  
+    .main-text {
+      @include font-settings(16px, 400, 16px, 0.64px);
+      margin-bottom: 24px;
+      color: inherit;
+      text-align: start;
+    }
+  
+    .box-text-number {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  
+      @include laptop {
+        flex-direction: row;
+        gap: 80px;
+      }
+  
+      .text-number {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        .text {
+          @include font-settings(16px, 500, 16px, 0);
+          color: inherit;
+          text-align: start;
+        }
+  
+        .number {
+          @include font-settings(32px, 700, 1, 0);
+          color: inherit;
+          text-align: start;
+        }
+      }
+    }
+  }
+  
