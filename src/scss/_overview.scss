@@ -7,7 +7,7 @@
         background-image: url(/img/overview/boy-1x.png);
         background-size: 275px 408px;
         background-repeat: no-repeat;
-        background-position: left bottom;
+        background-position: left center;
 
         .box-header{
             padding-left: 400px;
@@ -21,8 +21,8 @@
 
         @include laptop{
             align-items: flex-start;
-            padding-top: 77px;
-            padding-bottom: 77px;
+            padding-top: 37px;
+            padding-bottom: 37px;
         }
 
         .text-under-header{
@@ -32,6 +32,10 @@
             padding: 4px 8px 4px 8px;
             color: #ffffff;
             border-radius: 4px;
+        }
+
+        .link-google{
+            margin-top: 16px;
         }
 
     }
