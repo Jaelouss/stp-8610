@@ -1,9 +1,13 @@
 .overview{
-    max-width: 321px;
+    max-width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin: 0 auto;
     
     @include laptop{
-        max-width: 921px;
+        max-width: 1200px;
+        padding-left: 139.5px;
+        padding-right: 139.5px;
         background-image: url(/img/overview/boy-1x.png);
         background-size: 275px 408px;
         background-repeat: no-repeat;
