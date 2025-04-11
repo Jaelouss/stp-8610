@@ -2,9 +2,12 @@
     height: 458px;
     background: linear-gradient(to bottom, #00939A, #9DA1F0, #E056F5);
     padding-block: 0;
-  
+    width: 319.98px;
+    margin: 0 auto;
+
     @include laptop {
       height: 691px;
+      width: 1198.98px;
     }
   
     .container {
