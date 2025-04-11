@@ -13,7 +13,7 @@
     .content {
         background-color: rgba(0, 146, 154, 0.2);
         backdrop-filter: blur(6px);
-        max-width: 320px;
+        max-width: 319.98px;
         padding-left: 20px;
         padding-right: 20px;
         margin: 0 auto;
@@ -24,7 +24,7 @@
         height: 100%;
 
         @include laptop {
-            max-width: 1200px;
+            max-width: 1198.98px;
             padding-left: 139.5px;
             padding-right: 139.5px;
         }
