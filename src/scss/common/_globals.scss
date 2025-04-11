@@ -2,6 +2,7 @@
 @import './vars';
 
 html {
+  scroll-padding-top: 60px;
   &.is-lock {
     overflow: hidden;
   }
