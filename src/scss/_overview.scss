@@ -17,7 +17,12 @@
       padding-left: 400px;
     }
   }
-
+  .box {
+    padding-inline: 20px;
+    @include laptop {
+      display: contents;
+    }
+  }
   .box-header {
     @include flex-center(column);
     gap: 24px;
@@ -35,6 +40,10 @@
       padding: 4px 8px 4px 8px;
       color: #ffffff;
       border-radius: 4px;
+      font-size: 12px;
+      @include laptop {
+        font-size: 16px;
+      }
     }
 
     .link-google {
