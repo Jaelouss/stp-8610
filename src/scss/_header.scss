@@ -1,3 +1,8 @@
+body.lock {
+    overflow: hidden !important;
+    height: 100% !important;
+  }
+  
 .header {
     height: 60px;
     position: fixed;
@@ -44,23 +49,48 @@
 
     .burger-icon {
         width: 18px;
-        height: 13px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        height: 18px;
+        position: relative;
         cursor: pointer;
-
+        z-index: 3000;
+      
         span {
-            display: block;
-            height: 2px;
-            background-color: #ffffff;
-            border-radius: 2px;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: white;
+          border-radius: 1px;
+          transition: all 0.3s ease;
         }
+      
+        span:nth-child(1) {
+          top: 6px;
+        }
+      
+        span:nth-child(2) {
+          top: 11px;
+        }
+      
+        span:nth-child(3) {
+          top: 16px;
+        }
+      
+        &.open span:nth-child(1) {
+          transform: rotate(45deg);
+          top: 11px;
+        }
+      
+        &.open span:nth-child(2) {
+          opacity: 0;
+        }
+      
+        &.open span:nth-child(3) {
+          transform: rotate(-45deg);
+          top: 11px;
+        }
+      }
 
-        @include laptop {
-            display: none;
-        }
-    }
 
     .box-navigation {
         display: none;
@@ -78,7 +108,6 @@
         background-position: top;
         background-repeat: no-repeat;
         background-size: 330px;
-
         @media screen and (min-device-pixel-ratio: 2), 
         (min-resolution: 192dpi) {
             background-image: url(/img/burger-menu/back-2x.png); 
@@ -112,49 +141,6 @@
 
         &.active {
             display: flex;
-        }
-
-        .icon-cross {
-            position: absolute;
-            top: 12px;
-            right: 20px;
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 3000;
-            
-            .line {
-                width: 20px;
-                height: 2px;
-                border-radius: 2px;
-                background-color: rgb(255, 255, 255);
-                position: absolute;
-                transition: all 0.3s ease;
-            }
-        
-            .line-1 {
-                transform: rotate(45deg);
-            }
-        
-            .line-2 {
-                transform: rotate(-45deg);
-            }
-        
-            &:hover .line-1, &:hover .line-2 {
-                background-color: #E056F5;
-            }
-        
-            @include laptop {
-                display: none;
-            }
-        }
-        
-
-        @include laptop {
-            display: none;
         }
     }
 

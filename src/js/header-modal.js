@@ -1,21 +1,40 @@
-const button = document.querySelector('.burger-icon');
-const menu = document.querySelector('.box-navigation');
-const iconClose = document.querySelector('.icon-cross');
-const elNavigation = menu.querySelectorAll('.element-navigation');
+const burger = document.querySelector('.burger-icon');
+const nav = document.querySelector('.box-navigation');
+const body = document.body;
+const overlay = document.getElementById('overlay');
 
-button.addEventListener('click', () => {
-    menu.classList.toggle('active');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+    nav.classList.toggle('active');
+    body.classList.toggle('lock');
+    overlay.classList.toggle('active');
+});
 
-})
+window.addEventListener('resize', () => {
+    const width = window.innerWidth;
 
-iconClose.addEventListener('click', ()=>{
-    menu.classList.toggle('active');
-})
+    if(width >= 1200)
+    {
+        nav.classList.remove('active');
+        burger.classList.remove('open');
+        body.classList.remove('lock');
+        overlay.classList.remove('active');
+    }
+  });
 
-elNavigation.forEach(navItem =>{
-    navItem.addEventListener('click', ()=>{
-        menu.classList.toggle('active');
-    });
-})
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('active');
+    burger.classList.remove('open');
+    body.classList.remove('lock');
+    overlay.classList.remove('active');
+  });
 
-
+const menuLinks = document.querySelectorAll('.list-navigation .link-navigation');
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active'); 
+    burger.classList.remove('open'); 
+    body.classList.remove('lock'); 
+    overlay.classList.remove('active');
+  });
+});
