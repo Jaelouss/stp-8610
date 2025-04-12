@@ -1,205 +1,212 @@
 .features {
-    background-color: #F4F4F4;
-    max-width: 318.97px;
-    margin: 0 auto;
+  background-color: #f4f4f4;
+  max-width: 318.97px;
+  margin: 0 auto;
+
+  @include laptop {
+    max-width: 1198.97px;
+
+    .container {
+      padding-inline: 101px;
+    }
+  }
+
+  .section-header-box {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
 
     @include laptop {
-        max-width: 1198.97px;
-
-        .container {
-            padding-inline: 101px;
-        }
+      margin-bottom: 90px;
     }
 
-    .section-header-box {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 40px;
+    .accent-text {
+      display: inline-block;
+      padding: 8px 4px;
+      @include font-settings(12px, 400, 1, 0);
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #e056f5;
+      border-radius: 4px;
+      @include laptop {
+        font-size: 16px;
+      }
+    }
+
+    .section-header {
+      @include font-settings(24px, 700, 24px, 0.96px);
+      text-align: center;
+      text-transform: uppercase;
+      color: black;
+    }
+
+    .text {
+      @include font-settings(16px, 400, 16px, 0.96px);
+      text-align: center;
+      color: #888;
+    }
+  }
+
+  .img-box {
+    width: 131px;
+    height: 278.33px;
+    margin: 0 auto 50px;
+
+    @include laptop {
+      width: 226px;
+      height: 480px;
+    }
+
+    .image {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .candy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    .candy-element {
+      padding-block: 60px 12px;
+      padding-inline: 12px;
+      background-position: top;
+      background-repeat: no-repeat;
+
+      .candy-header,
+      .candy-text {
+        @include font-settings(16px, 400, 16px, 0.64px);
+        text-align: center;
+        color: #888;
 
         @include laptop {
-            margin-bottom: 90px;
+          text-align: inherit;
         }
+      }
 
-        .accent-text {
-            display: inline-block;
-            padding: 8px 4px;
-            @include font-settings(16px, 700, 16px, 0);
-            text-align: center;
-            text-transform: uppercase;
-            color: #fff;
-            background-color: #E056F5;
-            border-radius: 4px;
-            
-        }
-
-        .section-header {
-            @include font-settings(24px, 700, 24px, 0.96);
-            text-align: center;
-            text-transform: uppercase;
-            color: black;
-        }
-
-        .text {
-            @include font-settings(16px, 400, 16px, 0.96);
-            text-align: center;
-            color: #888;
-        }
+      .candy-header {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
     }
 
-    .img-box {
-        width: 131px;
-        height: 278.33px;
-        margin: 0 auto 50px;
+    @each $i, $img, $size, $align,
+      $dir
+        in (
+          (1, candy_1, 36px 36px, right, right),
+          (2, candy_2, 36px 35px, right, right),
+          (3, candy_3, 36px 40px, left, left),
+          (4, candy_4, 36px 44px, left, left)
+        )
+    {
+      .candy-element:nth-child(#{$i}) {
+        background-image: url(/img/about/#{$img}.png);
+        background-size: #{$size};
+
+        @media screen and (min-device-pixel-ratio: 2),
+          (min-resolution: 192dpi) {
+          background-image: url(/img/about/#{$img}_2x.png);
+        }
 
         @include laptop {
-            width: 226px;
-            height: 480px;
-        }
+          background-position: top #{$align};
+          width: 326px;
+          height: 93px;
+          padding-top: 12px;
+          padding-#{$align}: 48px;
 
-        .image {
-            height: 100%;
-            object-fit: contain;
+          .candy-header,
+          .candy-text {
+            text-align: #{$dir};
+          }
         }
+      }
     }
 
-    .candy-list {
-        display: flex;
-        flex-direction: column;
-        gap: 22px;
+    .candy-element:nth-child(5) {
+      background: url(/img/about/candy_mobile.png) top / 63px 36px no-repeat;
+
+      @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(/img/about/candy_mobile_2x.png);
+      }
+
+      @include laptop {
+        background: url(/img/about/candy_5.png) top center/ 63px 36px no-repeat;
+
+        @media screen and (min-device-pixel-ratio: 2),
+          (min-resolution: 192dpi) {
+          background-image: url(/img/about/candy_5_2x.png);
+        }
+
+        width: 326px;
+        height: 93px;
+        padding-top: 60px;
+
+        .candy-header,
+        .candy-text {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @include laptop {
+    .candy-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 151px;
+
+      .img-box {
+        position: relative;
+        z-index: 1;
+      }
+
+      .candy-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
 
         .candy-element {
-            padding-top: 60px;
-            background-position: top;
-            background-repeat: no-repeat;
+          position: absolute;
 
-            .candy-header,
-            .candy-text {
-                @include font-settings(16px, 400, 16px, 0.64);
-                text-align: center;
-                color: #888;
+          &:nth-child(1) {
+            top: 127px;
+            left: 0;
+          }
 
-                @include laptop {
-                    text-align: inherit;
-                }
-            }
+          &:nth-child(2) {
+            top: 340px;
+            left: 0;
+          }
 
-            .candy-header {
-                font-weight: 700;
-                text-transform: uppercase;
-                margin-bottom: 12px;
-            }
+          &:nth-child(3) {
+            top: 127px;
+            right: 0;
+          }
+
+          &:nth-child(4) {
+            top: 340px;
+            right: 0;
+          }
+
+          &:nth-child(5) {
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
         }
-
-        @each $i, $img, $size, $align, $dir in (
-            (1, candy_1, 36px 36px, right, right),
-            (2, candy_2, 36px 35px, right, right),
-            (3, candy_3, 36px 40px, left, left),
-            (4, candy_4, 36px 44px, left, left)
-        ) {
-            .candy-element:nth-child(#{$i}) {
-                background-image: url(/img/about/#{$img}.png);
-                background-size: #{$size};
-
-                @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-                    background-image: url(/img/about/#{$img}_2x.png);
-                }
-
-                @include laptop {
-                    background-position: top #{$align};
-                    width: 326px;
-                    height: 93px;
-                    padding-top: 12px;
-                    padding-#{$align}: 48px;
-
-                    .candy-header,
-                    .candy-text {
-                        text-align: #{$dir};
-                    }
-                }
-            }
-        }
-
-        .candy-element:nth-child(5) {
-            background: url(/img/about/candy_mobile.png) top / 63px 36px no-repeat;
-
-            @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-                background-image: url(/img/about/candy_mobile_2x.png);
-            }
-
-            @include laptop {
-                background: url(/img/about/candy_5.png) top / 63px 36px no-repeat;
-
-                @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-                    background-image: url(/img/about/candy_5_2x.png);
-                }
-
-                background-position: top center;
-                width: 326px;
-                height: 93px;
-                padding-top: 60px;
-
-                .candy-header,
-                .candy-text {
-                    text-align: center;
-                }
-            }
-        }
+      }
     }
-
-    @include laptop {
-        .candy-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding-bottom: 151px;
-
-            .img-box {
-                position: relative;
-                z-index: 1;
-            }
-
-            .candy-list {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-
-                .candy-element {
-                    position: absolute;
-
-                    &:nth-child(1) {
-                        top: 127px;
-                        left: 0;
-                    }
-
-                    &:nth-child(2) {
-                        top: 340px;
-                        left: 0;
-                    }
-
-                    &:nth-child(3) {
-                        top: 127px;
-                        right: 0;
-                    }
-
-                    &:nth-child(4) {
-                        top: 340px;
-                        right: 0;
-                    }
-
-                    &:nth-child(5) {
-                        bottom: 40px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                    }
-                }
-            }
-        }
-    }
+  }
 }
