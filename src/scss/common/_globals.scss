@@ -13,6 +13,7 @@ body {
   background-color: $_white;
 }
 main {
+  @include flex-center(column);
   flex-grow: 1;
 }
 .button-white {

@@ -1,184 +1,203 @@
-body.lock {
-    overflow: hidden !important;
-    height: 100% !important;
-  }
-  
 .header {
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 100%;
+  z-index: 1000;
+
+  @include laptop {
+    height: 91px;
+  }
+  &.container {
+    padding-inline: 0;
+  }
+
+  .content {
+    background-color: #009fa8b5;
+    backdrop-filter: blur(15px);
     width: 100%;
-    z-index: 1000;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
 
     @include laptop {
-        height: 91px;
+      max-width: 1198.98px;
+      padding-left: 139.5px;
+      padding-right: 139.5px;
+    }
+  }
+
+  .icon-box {
+    .favicon {
+      width: 45px;
+      height: 36px;
+
+      @include laptop {
+        width: 65px;
+        height: 52px;
+      }
+    }
+  }
+
+  .burger-icon {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 3000;
+    background-color: transparent;
+    border: none;
+    top: 50%;
+    left: 90%;
+    translate: -50% -50%;
+    z-index: 99999;
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      border-radius: 1px;
+      transition: all 0.3s ease;
     }
 
-    .content {
-        background-color: rgba(0, 146, 154, 0.2);
-        backdrop-filter: blur(6px);
-        max-width: 319.98px;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin: 0 auto;
-        display: flex;
+    span:nth-child(1) {
+      top: 6px;
+    }
+
+    span:nth-child(2) {
+      top: 11px;
+    }
+
+    span:nth-child(3) {
+      top: 16px;
+    }
+    &.open {
+      left: 87%;
+    }
+    &.open span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 11px;
+    }
+
+    &.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.open span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 11px;
+    }
+  }
+  #overlay {
+    display: none;
+    @include laptop {
+      display: contents;
+    }
+  }
+  #overlay.active {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    background-color: rgba(255, 255, 255, 0.452);
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+  }
+  .box-navigation {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 2000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/img/burger-menu/back-1x.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 330px;
+    @include laptop-below {
+      margin-right: 17px;
+      padding: 0;
+    }
+    @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(/img/burger-menu/back-2x.png);
+    }
+
+    .list-navigation {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      @include font-settings(18px, 500, 16px, 0);
+      color: #888888;
+
+      .element-navigation {
+        text-align: center;
+      }
+
+      .link-navigation {
+        color: #888888;
+        padding: 12px 4px;
+      }
+
+      .link-navigation:hover,
+      .link-navigation:focus {
+        background-color: #e056f5;
+        color: #ffffff;
+        outline: none;
+        padding: 12px 4px;
+        border-radius: 4px;
+      }
+    }
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  @include laptop {
+    .box-navigation {
+      display: flex;
+      position: static;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      background-image: none;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      .list-navigation {
         flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        height: 100%;
+        gap: 12px;
+        color: #ffffff;
 
-        @include laptop {
-            max-width: 1198.98px;
-            padding-left: 139.5px;
-            padding-right: 139.5px;
+        .link-navigation {
+          padding: 12px 4px;
+          color: #ffffff;
         }
-    }
 
-    .icon-box {
-        .favicon {
-            width: 45px;
-            height: 36px;
-
-            @include laptop {
-                width: 65px;
-                height: 52px;
-            }
+        .link-navigation:hover,
+        .link-navigation:focus {
+          background-color: #e056f5;
+          padding: 12px 4px;
+          border-radius: 4px;
         }
+      }
     }
 
     .burger-icon {
-        width: 18px;
-        height: 18px;
-        position: relative;
-        cursor: pointer;
-        z-index: 3000;
-      
-        span {
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background-color: white;
-          border-radius: 1px;
-          transition: all 0.3s ease;
-        }
-      
-        span:nth-child(1) {
-          top: 6px;
-        }
-      
-        span:nth-child(2) {
-          top: 11px;
-        }
-      
-        span:nth-child(3) {
-          top: 16px;
-        }
-      
-        &.open span:nth-child(1) {
-          transform: rotate(45deg);
-          top: 11px;
-        }
-      
-        &.open span:nth-child(2) {
-          opacity: 0;
-        }
-      
-        &.open span:nth-child(3) {
-          transform: rotate(-45deg);
-          top: 11px;
-        }
-      }
-
-
-    .box-navigation {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgb(255, 255, 255);
-        z-index: 2000;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-image: url(/img/burger-menu/back-1x.png);
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: 330px;
-        @media screen and (min-device-pixel-ratio: 2), 
-        (min-resolution: 192dpi) {
-            background-image: url(/img/burger-menu/back-2x.png); 
-        }
-
-        .list-navigation {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            @include font-settings(16px, 500, 16px, 0);
-            color: #888888;
-
-            .element-navigation {
-                text-align: center;
-            }
-
-            .link-navigation {
-                color: #888888;
-                padding: 12px 4px;
-            }
-
-            .link-navigation:hover,
-            .link-navigation:focus {
-                background-color: #E056F5;
-                color: #ffffff;
-                outline: none;
-                padding: 12px 4px;
-                border-radius: 4px;
-            }
-        }
-
-        &.active {
-            display: flex;
-        }
+      display: none;
     }
-
-    @include laptop {
-        .box-navigation {
-            display: flex; 
-            position: static;
-            width: auto;
-            height: auto;
-            background-color: transparent;
-            background-image: none; 
-            flex-direction: row; 
-            justify-content: flex-start;
-            padding-left: 20px;
-            padding-right: 20px;
-
-            .list-navigation {
-                flex-direction: row; 
-                gap: 12px;
-                color: #ffffff;
-
-                .link-navigation {
-                    padding: 12px 4px;
-                    color: #ffffff;
-                }
-    
-                .link-navigation:hover,
-                .link-navigation:focus {
-                    background-color: #E056F5;
-                    padding: 12px 4px;
-                    border-radius: 4px;
-                }
-            }
-           
-        }
-
-        .burger-icon {
-            display: none;
-        }
-    }
+  }
 }
