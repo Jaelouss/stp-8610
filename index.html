@@ -23,60 +23,52 @@
       rel="stylesheet"
     />
     <title>Sugar Swap Mania</title>
-    <script type="module" crossorigin src="/stp-8610/assets/main-fe8fdae2.js"></script>
-    <link rel="stylesheet" href="/stp-8610/assets/index-e7d9b6ae.css">
+    <script type="module" crossorigin src="/stp-8610/assets/main-5f2260a9.js"></script>
+    <link rel="stylesheet" href="/stp-8610/assets/index-8a40eb5d.css">
   </head>
   <body>
-    <header class="header container">
-  <div class="content">
-    <div class="icon-box">
-      <a href="#hero">
-        <img
-          class="favicon"
-          width="45"
-          height="36"
-          srcset="/stp-8610/assets/logo-c43c6d16.png 1x, /stp-8610/assets/logo-2x-f65a3dc9.png 2x"
-          src="/stp-8610/assets/logo-c43c6d16.png"
-          alt="sugar swap mania logo"
-        />
-      </a>
-    </div>
-
-    <button class="burger-icon" aria-label="open menu" title="open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div id="overlay" class="navigation">
-      <nav id="nav" class="box-navigation">
-        <ul class="list-navigation">
-          <li class="element-navigation">
-            <a class="link-navigation" href="#overview">Overview</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#features">Features</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#play">How to Play</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#world">Candy World</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#achievements">Achievements</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#events">Events</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#developers">Developers</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
+    <section id="header" class="header container">
+  <a class="header__link" href="#hero">
+    <img
+      width="45"
+      height="36"
+      class="header__logo"
+      srcset="/stp-8610/assets/logo-c43c6d16.png 1x, /stp-8610/assets/logo-2x-f65a3dc9.png 2x"
+      src="/stp-8610/assets/logo-c43c6d16.png"
+      alt="game logo"
+    />
+  </a>
+  <button id="burger" class="header__burger-button burger-button">
+    <span class="burger-button-line"></span>
+    <span class="burger-button-line"></span>
+    <span class="burger-button-line"></span>
+  </button>
+  <nav id="overlay" class="header__nav">
+    <ul class="header__list">
+      <li class="header__item">
+        <a href="#overview" class="header__link">Overview</a>
+      </li>
+      <li class="header__item">
+        <a href="#features" class="header__link">Features</a>
+      </li>
+      <li class="header__item">
+        <a href="#play" class="header__link">How to Play</a>
+      </li>
+      <li class="header__item">
+        <a href="#word" class="header__link">Candy World</a>
+      </li>
+      <li class="header__item">
+        <a href="#achievements" class="header__link">Achievements</a>
+      </li>
+      <li class="header__item">
+        <a href="#events" class="header__link">Events</a>
+      </li>
+      <li class="header__item">
+        <a href="#developers" class="header__link">Developers</a>
+      </li>
+    </ul>
+  </nav>
+</section>
 
     <main>
       <section id="hero" class="hero container">
