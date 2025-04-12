@@ -3,6 +3,7 @@
     @include flex-center;
     justify-content: space-between;
     background-color: $_pink;
+    padding-block: 10px;
     @include laptop {
       padding-inline: 200px;
       justify-content: start;
