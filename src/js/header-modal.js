@@ -1,29 +1,43 @@
-const burger = document.querySelector('.burger-icon');
-const nav = document.querySelector('#nav');
-const html = document.documentElement;
-const overlay = document.getElementById('overlay');
+const button = document.querySelector('#burger');
+const overlay = document.querySelector('#overlay');
+const html = document.querySelector('html');
+const header = document.querySelector('#header');
 
-burger.addEventListener('click', () => {
-  burger.classList.toggle('open');
-  nav.classList.toggle('active');
-  html.classList.toggle('is-lock');
-  overlay.classList.toggle('active');
-});
+function lockScroll() {
+  const scrollbarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
+  document.documentElement.classList.add('is-lock');
+  document.body.style.paddingRight = `${scrollbarWidth}px`;
+  document.documentElement.style.setProperty(
+    '--scrollbar-offset',
+    `${scrollbarWidth / 2}px`
+  );
+}
 
-window.addEventListener('resize', () => {
-  const width = window.innerWidth;
+function unlockScroll() {
+  document.documentElement.classList.remove('is-lock');
+  document.body.style.paddingRight = '';
+  document.documentElement.style.setProperty('--scrollbar-offset', '0px');
+}
 
-  if (width >= 1200) {
-    nav.classList.remove('active');
-    burger.classList.remove('open');
-    html.classList.remove('is-lock');
-    overlay.classList.remove('active');
+button.addEventListener('click', e => {
+  if (e.target.closest('#burger')) {
+    button.classList.toggle('open');
+    overlay.classList.toggle('open');
+
+    if (html.classList.contains('is-lock')) {
+      unlockScroll();
+    } else {
+      lockScroll();
+    }
   }
 });
-
 overlay.addEventListener('click', e => {
-  nav.classList.remove('active');
-  burger.classList.remove('open');
-  html.classList.remove('is-lock');
-  overlay.classList.remove('active');
+      button.classList.toggle('open');
+      overlay.classList.toggle('open');
+      if (html.classList.contains('is-lock')) {
+        unlockScroll();
+      } else {
+        lockScroll();
+      }
 });

@@ -1,53 +1,45 @@
-<header class="header container">
-  <div class="content">
-    <div class="icon-box">
-      <a href="#hero">
-        <img
-          class="favicon"
-          width="45"
-          height="36"
-          srcset="
-            /img/additionalPage/logo.png    1x,
-            /img/additionalPage/logo-2x.png 2x
-          "
-          src="/img/additionalPage/logo.png"
-          alt="sugar swap mania logo"
-        />
-      </a>
-    </div>
-
-    <button class="burger-icon" aria-label="open menu" title="open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div id="overlay" class="navigation">
-      <nav id="nav" class="box-navigation">
-        <ul class="list-navigation">
-          <li class="element-navigation">
-            <a class="link-navigation" href="#overview">Overview</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#features">Features</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#play">How to Play</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#world">Candy World</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#achievements">Achievements</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#events">Events</a>
-          </li>
-          <li class="element-navigation">
-            <a class="link-navigation" href="#developers">Developers</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
+<section id="header" class="header container">
+  <a class="header__link" href="#hero">
+    <img
+      width="45"
+      height="36"
+      class="header__logo"
+      srcset="
+        /img/additionalPage/logo.png    1x,
+        /img/additionalPage/logo-2x.png 2x
+      "
+      src="/img/additionalPage/logo.png"
+      alt="game logo"
+    />
+  </a>
+  <button id="burger" class="header__burger-button burger-button">
+    <span class="burger-button-line"></span>
+    <span class="burger-button-line"></span>
+    <span class="burger-button-line"></span>
+  </button>
+  <nav id="overlay" class="header__nav">
+    <ul class="header__list">
+      <li class="header__item">
+        <a href="#overview" class="header__link">Overview</a>
+      </li>
+      <li class="header__item">
+        <a href="#features" class="header__link">Features</a>
+      </li>
+      <li class="header__item">
+        <a href="#play" class="header__link">How to Play</a>
+      </li>
+      <li class="header__item">
+        <a href="#word" class="header__link">Candy World</a>
+      </li>
+      <li class="header__item">
+        <a href="#achievements" class="header__link">Achievements</a>
+      </li>
+      <li class="header__item">
+        <a href="#events" class="header__link">Events</a>
+      </li>
+      <li class="header__item">
+        <a href="#developers" class="header__link">Developers</a>
+      </li>
+    </ul>
+  </nav>
+</section>
