@@ -32,3 +32,12 @@ button.addEventListener('click', e => {
     }
   }
 });
+overlay.addEventListener('click', e => {
+      button.classList.toggle('open');
+      overlay.classList.toggle('open');
+      if (html.classList.contains('is-lock')) {
+        unlockScroll();
+      } else {
+        lockScroll();
+      }
+});

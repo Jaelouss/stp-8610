@@ -73,5 +73,10 @@
       color: $_white;
       font-size: 18px;
     }
+    @include hover {
+      background-color: $_pink;
+      border-radius: 10px;
+      color: $_white;
+    }
   }
 }
