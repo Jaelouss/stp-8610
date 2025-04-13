@@ -20,8 +20,8 @@ function unlockScroll() {
   document.documentElement.style.setProperty('--scrollbar-offset', '0px');
 }
 
-button.addEventListener('click', e => {
-  if (e.target.closest('#burger')) {
+function handleMenuToggle(e) {
+  if (window.innerWidth < 1200) {
     button.classList.toggle('open');
     overlay.classList.toggle('open');
 
@@ -31,13 +31,12 @@ button.addEventListener('click', e => {
       lockScroll();
     }
   }
+}
+
+button.addEventListener('click', e => {
+  if (e.target.closest('#burger')) {
+    handleMenuToggle(e);
+  }
 });
-overlay.addEventListener('click', e => {
-      button.classList.toggle('open');
-      overlay.classList.toggle('open');
-      if (html.classList.contains('is-lock')) {
-        unlockScroll();
-      } else {
-        lockScroll();
-      }
-});
+
+overlay.addEventListener('click', handleMenuToggle);
